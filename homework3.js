@@ -3,22 +3,22 @@
 /* const iifeFunction = function () {
   let value;
   const obj = {
-    setValue: function (a) {
-      value = a;
+    setValue: function (paramValue) {
+      value = paramValue;
       return value
     },
-    showValue: function (a) {
-      if (a) {
-        return a;
+    showValue: function (paramValue) {
+      if (paramValue) {
+        return paramValue;
       } else {
         return "nie wskazano parametru";
       }
     },
-    reverseValue: function (a) {
-      if (typeof a == "number") {
-        return a * (-1);
-      } else if (typeof a !== "number") {
-        return a.split("").reverse().join("");
+    reverseValue: function (paramValue) {
+      if (typeof paramValue == "number") {
+        return paramValue * (-1);
+      } else if (typeof paramValue !== "number") {
+        return paramValue.split("").reverse().join("");
       }
     }
   }
@@ -57,8 +57,8 @@ const setOperations = (x, y) => {
       a: x,
       b: y
     },
-    calculate: function (a) {
-      return a(setOperations(x, y).paramField.a, setOperations(x, y).paramField.b);
+    calculate: function (mathOperation) {
+      return mathOperation(setOperations(x, y).paramField.a, setOperations(x, y).paramField.b);
     }
   }
 }
@@ -93,9 +93,9 @@ const mixedFunct = (x, y) => {
       a: x,
       b: y
     },
-    setOperations: function (a) {
+    setOperations: function (mathOperation) {
       (function calculate() {
-        return a(mixedFunct(x, y).paramField.a, mixedFunct(x, y).paramField.b);
+        return mathOperation(mixedFunct(x, y).paramField.a, mixedFunct(x, y).paramField.b);
       }());
     }
   }
