@@ -25,8 +25,10 @@
   const objSet = obj.setValue(60);
   const objShow = obj.showValue(value);
   const objRev = obj.reverseValue("AbraKadabra");
-  console.log(objSet, objShow, objRev);
-}(); */
+  return [objSet, objShow, objRev];
+}();
+
+console.log(iifeFunction); */
 
 
 // <<<<<<<<<<<<<<<<<<<<<<<< Exercise 2 >>>>>>>>>>>>>>>>>>>>>>>>>
@@ -135,9 +137,7 @@ const baseObject = {
 
 let i = 0;
 while (i < arr.length) {
-  baseObject.x = arr[i].x;
-  baseObject.y = arr[i].y;
-  sums.push(baseObject.sum());
+  sums.push(baseObject.sum.call(arr[i]));
   i++;
 }
 
@@ -170,7 +170,7 @@ console.log(sums); */
 ];
 
 for (let i = 0; i < arr.length; i++) {
-  if (arr[i] != arr[arr.length - 1]) {
+  if (i % arr.length-1 !== 0) {
     console.log(arr[i].operation.call(arr[i + 1]));
   } else {
     console.log(arr[i].operation.call(arr[0]));
