@@ -1,11 +1,11 @@
 // <<<<<<<<<<<<<<<<<< Exercise 1 >>>>>>>>>>>>>>>
 
-/* const iifeFunction = function () {
+/* const iifeFunction = (function () {
   let value;
   const obj = {
     setValue: function (paramValue) {
       value = paramValue;
-      return value
+      return value;
     },
     showValue: function (paramValue) {
       if (paramValue) {
@@ -16,20 +16,27 @@
     },
     reverseValue: function (paramValue) {
       if (typeof paramValue == "number") {
-        return paramValue * (-1);
-      } else if (typeof paramValue !== "number") {
-        return paramValue.split("").reverse().join("");
+        return paramValue * -1;
+      } else if (
+        typeof paramValue !== "number" ||
+        typeof paramValue !== "string"
+      ) {
+        return paramValue
+          .split("")
+          .reverse()
+          .join("");
+      } else {
+        console.log("Why undefined or null???");
       }
     }
-  }
+  };
   const objSet = obj.setValue(60);
   const objShow = obj.showValue(value);
   const objRev = obj.reverseValue("AbraKadabra");
   return [objSet, objShow, objRev];
-}();
+})();
 
 console.log(iifeFunction); */
-
 
 // <<<<<<<<<<<<<<<<<<<<<<<< Exercise 2 >>>>>>>>>>>>>>>>>>>>>>>>>
 
@@ -175,4 +182,7 @@ for (let i = 0; i < arr.length; i++) {
   } else {
     console.log(arr[i].operation.call(arr[0]));
   }
-} */
+} // forEach i modulo 
+arr.forEach(el, i, array, () => {
+ // modulo!!!!!!!1
+}) */
